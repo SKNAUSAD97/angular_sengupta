@@ -1,0 +1,36 @@
+
+<section class="top_site_main " style="min-height: 180px; color: #ffffff;background-image:url(https://senguptasresearchacademy.com/wp-content/uploads/2017/05/literature.png);">
+    <div class="container">
+       <div class="row">
+          <h1 class="tes-sec">FREE LECTURE CATEGORIES</h1>
+       </div>
+    </div>
+ </section>
+ <!-- <section style="background-color: #f6f6f6;">
+     <div class="container">
+        <div class="row">
+            <div class="col-md-4" *ngFor="let lecture of freeLecturecategories">
+                <a style="cursor: pointer;" (click)="redirectToSinglePage(lecture.id)">
+                    <img src="{{ lecture.category_image }}" height="270" width="270" class="image">
+                    <p class="description">{{ lecture.category_name }}</p>
+                </a>
+            </div>
+        </div>
+     </div>
+ </section> -->
+ <section style="background-color: #f6f6f6;">
+    <div class="container">
+       <div class="row">
+           <div class="col-md-4" *ngFor="let lecture of freeLecturecategories">
+               <div class="free-lecture-con-sec">
+                <img src="{{ lecture.category_image }}" class="image w-100" height="280px">
+                <div class="free-lec-para">
+                <p class="description-free-lec">{{ lecture.category_name }}</p>
+                <a style="cursor: pointer;" (click)="redirectToSinglePage(lecture.id)" class="free-lec-btn" >MORE INFO</a>
+                </div>
+               </div>
+           </div>
+       </div>
+    </div>
+</section> 
+ 

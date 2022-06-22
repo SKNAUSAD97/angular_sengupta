@@ -1,0 +1,33 @@
+<section class="top_site_main " style="min-height: 180px; color: #ffffff;background-image:url(https://senguptasresearchacademy.com/wp-content/uploads/2017/05/literature.png);">
+    <div class="container">
+       <div class="row">
+          <h1 class="tes-sec">Blogs</h1>
+       </div>
+    </div>
+ </section>
+
+<section id="team" class="team section-bg">
+    <div class="container">
+       <!-- <div class="section-title">
+          <h2 data-aos="fade-up">BLOGS</h2>
+       </div> -->
+       <div class="row">
+          
+         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" *ngFor="let blog of blogs.data">
+             <div class="member">
+                <div class="member-img">
+                   <img src="{{ blog.blog_image }}" class="img-fluid img-blog" alt="" style="cursor: pointer;" (click)="redirectToFellowship()">
+                </div>
+                <div class="member-info">
+                   <h4>{{ blog.blog_name }}</h4>
+                   <span [innerHtml]='blog.short_description | slice:0:150'></span><br/>
+                </div>
+                <div class="btn-wrap">
+                   <a (click)="redirectToSinglePage(blog.id, blog.blog_name)" style="cursor: pointer;" class="btn-buy">Read More</a>
+                </div>
+             </div>
+          </div>
+          
+       </div>
+    </div>
+  </section>

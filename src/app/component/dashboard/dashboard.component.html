@@ -1,0 +1,151 @@
+<section class="pt-0">
+    <div class="container-fluid">
+        <div class="row" style="margin-top: 40px;">
+            <div class="col-md-3">
+              <div class="pat-widget-profile">
+                <div class="card-body">
+                    <div class="pro-widget-content">
+                      <img src="assets/user/assets/img/avatar.png">
+                      <div class="profile-det-info">
+                        <h3>{{ userinfo.name }}</h3>
+                        <p>{{ userinfo.email }}</p>
+                      </div>
+                    </div>
+                  <ul class="nav nav-tabs tab-overview" id="myTab" role="tablist">
+                    <li class="nav-item dash-li" role="presentation">
+                      <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+                        <i class="bi bi-book check-icom-overview"></i>
+                        <span>
+                            Courses
+                        </span>
+                      </a>
+                    </li>
+                    <li class="nav-item dash-li" role="presentation">
+                      <a class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                        <i class="bi bi-file-person check-icom-overview"></i>
+                        <span>
+                          Profile
+                        </span>
+                      </a>
+                    </li>
+                    <li class="nav-item dash-li" role="presentation">
+                      <a class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">
+                        <i class="bi bi-file-person check-icom-overview"></i>
+                        <span>
+                          Orders
+                        </span>
+                      </a>
+                    </li>
+                    <li class="nav-item dash-li" role="presentation">
+                      <a class="nav-link" id="" data-bs-toggle="tab"  type="button" (click)="logout()" aria-selected="false"><i class="bi bi-question-circle check-icom-overview"></i>
+                        <span> 
+                         Log out
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          <div class="col-md-9">
+          <div class="tab-content card-dashboard" id="myTabContent">
+            <!-- Courses Section Starts -->
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <div class="course-section">
+                <h3 class="text-center mb-3">Course's Taken</h3>
+                <div class="table-responsive">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Order ID</th>
+                        <th>Course Price</th>
+                        <th>Booking Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let booking of bookings">
+                        <th scope="row">{{ booking.order_id }}</th>
+                        <td>{{ booking.price }}</td>
+                        <td>{{ booking.booking_date }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="review-section" *ngIf="bookings.length != 0">                
+                <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
+                  <div class="rating-bx d-flex">
+                    <div><h4>Review</h4></div>
+                    <div class="rate">
+                      <input type="radio" id="star5" name="rate" value="5" [disabled]="isAvailableReview == 'yes'" [checked]="reviewCount == 5" (change)="getReview(5)" />
+                      <label for="star5" title="excelent">5 stars</label>
+                      <input type="radio" id="star4" name="rate" value="4" [disabled]="isAvailableReview == 'yes'" [checked]="reviewCount == 4" (change)="getReview(4)" />
+                      <label for="star4" title="very good">4 stars</label>
+                      <input type="radio" id="star3" name="rate" value="3" [disabled]="isAvailableReview == 'yes'" [checked]="reviewCount == 3" (change)="getReview(3)" />
+                      <label for="star3" title="good">3 stars</label>
+                      <input type="radio" id="star2" name="rate" value="2" [disabled]="isAvailableReview == 'yes'" [checked]="reviewCount == 2" (change)="getReview(2)" />
+                      <label for="star2" title="poor">2 stars</label>
+                      <input type="radio" id="star1" name="rate" value="1" [disabled]="isAvailableReview == 'yes'" [checked]="reviewCount == 1" (change)="getReview(1)" />
+                      <label for="star1" title="very poor">1 star</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <textarea class="form-control" formControlName="review_comment" placeholder="please write your comments here.."></textarea>
+                    <div *ngIf="f.review_comment.invalid && (f.review_comment.dirty || f.review_comment.touched)" class="error">
+                      <p *ngIf="f.review_comment.errors?.required" class="error">Please fill this field</p>
+                  </div>
+                  </div>
+                  <span class="mt-2" style="text-align: right; display: block;">
+                    <button [disabled]="isAvailableReview == 'yes' || reviewForm.invalid || selectreview!= true" type="submit" class="btn btn-primary">Submit</button>
+                    
+                  </span>
+                </form>
+              </div>
+            </div>
+            <!-- End of Course Section -->
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+              <div class="row justify-content-center">
+                <div class="col-md-6 col-md-offset-3">
+                  <h3 class="text-center">EDIT PROFILE</h3>
+                  <form #profileForm="ngForm" (ngSubmit)="profile(profileForm.value)">
+                    <input type="text" class="form-control mt-4" placeholder="Name" required ngModel #name="ngModel" name="name" [(ngModel)]="userinfo.name">
+                    <input type="number" class="form-control mt-4" placeholder="Mobile" required ngModel #mobile="ngModel" name="mobile" [(ngModel)]="userinfo.mobile">
+                    <input type="email" class="form-control mt-4" placeholder="Email" required ngModel #email="ngModel" name="email" [(ngModel)]="userinfo.email">
+                    <input type="password" class="form-control mt-4" placeholder="Password" required ngModel #password="ngModel" name="password">
+                    <input type="submit" class="form-control mt-4" value="SUBMIT" style="background-color: #fedc10;
+                    font-weight: 600;">
+                  </form>
+                </div> 
+              </div>
+            </div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+              <h3 class="text-center">All Orders</h3>
+              <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Course Price</th>
+                    <th>Booking Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let booking of bookings">
+                    <th scope="row">{{ booking.order_id }}</th>
+                    <td>{{ booking.price }}</td>
+                    <td>{{ booking.booking_date }}</td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
+              <button class="btn btn-primary" (click)="logout()">Logout</button>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+          <!-- ======= Team Section ======= -->

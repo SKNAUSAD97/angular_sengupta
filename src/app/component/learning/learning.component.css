@@ -1,0 +1,160 @@
+.buy-course{
+    background-color: #f6f6f6;
+    padding: 38px;
+    background: linear-gradient(45deg,#0D95AD 0%,#FFD2C1 100%);
+    border-radius: 10px;
+}
+.button-all-course{
+    display: block;
+    margin: 0 auto;
+    color: #f3517b;
+    font-weight: 600;
+    font-size: 17px;
+    padding: 10px 31px;
+    border-radius: 25px;
+    background-color: #FFF;
+    border-top: 1px solid #FFF;
+    border-left: 1px solid #FFF;
+    border-right: 1px solid #FFF;
+    border-bottom: 3px solid #fff;
+    line-height: 22px;
+}
+.price{
+    text-align: center;
+    font-size: 26px;
+    margin-top: 0px;
+    font-weight: 600;
+    color: #fff;
+}
+.image{
+    margin:0 auto !important;
+    display: block;
+}
+.description{
+    margin-top: 10px;
+    margin-bottom: 1rem;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+.courses-item{
+    text-align: left;
+    background: #fff;
+    padding: 0 0 33px;
+    margin-bottom: 30px;
+    
+}
+.courses-item .img-part {
+    margin-bottom: 35px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.courses-item .img-part img{
+    transition: all .5s ease;
+    transform: scale(1);
+    height: 220px;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+}
+.courses-item:hover .img-part img{
+    transform: scale(1.1);
+}
+.content-part h3{
+    margin: 0 0 15px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 25px;
+    color: #0f1216;
+    padding: 0 30px;
+}
+.content-part p{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #7a7a7a;
+    margin: 0 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ededed;
+}
+.bottom-part{
+cursor: pointer;
+margin: 10px 30px 0px;
+font-size: 15px;
+color: #645c5c;
+}
+.sales-tile3-icon{
+    height: 90px;
+    width: 90px;
+    justify-content: center;
+    margin: 0 20px 0 0;
+    background: #ffffff;
+    border-radius: 100px;
+    box-shadow: -10px -10px 0 rgb(0 0 0 / 10%);
+    animation: swing ease-in-out 1s infinite alternate;
+    transform-origin: center -20px;
+}
+.sales-tile3-icon i{
+    color: #f3517b;
+    font-size: 2.2rem;
+    position: relative;
+    top: 33px;
+    left: 30px;
+}
+.sales-tile3-icon:after{
+    content: '';
+    position: absolute;  
+    width: 20px; height: 20px;  
+    border: 1px solid #f3517b;
+    top: 28px; left: 42%;
+    z-index: 0;
+    border-bottom: none;
+    border-right: none;
+    transform: rotate(45deg);
+}
+/* nail */
+.sales-tile3-icon:before{
+    content: '';
+    position: absolute;
+    width: 5px; height: 5px;
+    top: 20px;left: 50%;
+    z-index: 5;
+    border-radius: 50% 50%;
+    background: #000;
+}
+.checked {
+    color: #fff;
+  }
+  .review-user{
+      text-align: center;
+      margin-top: 10px;
+  }
+  .review-user span{
+   padding: 2px;
+   font-size: 17px;
+   color: #fff;
+}
+@keyframes swing {
+    0% { transform: rotate(3deg); }
+    100% { transform: rotate(-3deg); }
+}
+.review-all{
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    border-bottom: none;
+}
+.review-all-bx{
+    border-bottom:1px solid #ddd;
+    padding: 10px;
+}
+.review-all span.bi.bi-star-fill {
+    color: #f3517b;
+    margin-right: 3px;
+    font-size: 18px;
+}
+.review-all h3 {
+    font-size: 20px;
+    margin-right: 10px;
+    border-bottom: 1px solid #000;
+}

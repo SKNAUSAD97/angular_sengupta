@@ -1,0 +1,31 @@
+<section class="top_site_main " style="min-height: 180px; color: #ffffff;background-image:url(https://senguptasresearchacademy.com/wp-content/uploads/2017/05/literature.png);">
+    <div class="container">
+       <div class="row">
+          <h1 class="tes-sec">{{ topic.get_course.course_name }}</h1>
+       </div>
+    </div>
+ </section>
+ <section>
+     <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <ul class="thim-course-info">
+                    <li *ngFor="let topics of allTopics | keyvalue">
+                        <i class='bx bxs-video-plus bx-fade-left check-icom-overview' style="font-size: 18px;"></i>
+                      <span class="label {{ topic.video == topics.value.video ? 'active' : '' }}" (click)="changeVideo(topics.value.video, topics.key, topics.value.id)" style="cursor: pointer;">
+                       {{ topics.value.title }}
+                      </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-8">
+                <div>
+                    <iframe width="100%" height="315" [src]="safeURL" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+                 </div>
+                 <div>
+                     <p>{{ description }}</p>
+                 </div>
+            </div>
+        </div>
+     </div>
+ </section>

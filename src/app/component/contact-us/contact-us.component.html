@@ -1,0 +1,130 @@
+<section class="top_site_main " style="min-height: 180px; color: #ffffff;background-image:url(https://eduma.thimpress.com/demo-vc/wp-content/themes/eduma/images/bg-page.jpg);">
+    <div class="container">
+      <div class="row">
+        <span class="overlay-top-header" style="background:rgba(0,0,0,0.5);opacity:1;"></span>
+      </div>
+    </div>
+  </section>
+  <section class="pb-0">
+      <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>CONTACT INFO</h3>
+                <p>Welcome to our Website. We are glad to have you around.</p>
+                <div class="line"></div>
+                <div class="row sec-address">
+                  <div class="col-md-5"> 
+                    <div class="row">
+                      <div class="col-md-2">
+                        <i class="bx bxs-phone-call contact-icon"></i>
+                      </div>
+                      <div class="col-md-10">
+                        <p><b>Phone</b></p>
+                        <p>9943909766</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-7"> 
+                    <div class="row">
+                      <div class="col-md-2">
+                        <i class="bx bxs-envelope contact-icon"></i>
+                      </div>
+                      <div class="col-md-10">
+                        <p><b>Email</b></p>
+                        <p>info@senguptasresearchacademy.com</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row sec-address">
+                  <div class="col-md-12"> 
+                    <div class="row">
+                      <div class="col-md-1">
+                        <i class="bx bxs-phone-call contact-icon"></i>
+                      </div>
+                      <div class="col-md-11">
+                        <p><b>Address</b></p>
+                        <p>Oberoi Gardens, Thakur Village, Kandivali (East), Mumbai – 400101, India.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row sec-address">
+                  <div class="col-md-12"> 
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="social-links2 text-lg-right">
+                          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                       </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br>
+            </div>
+            <div class="col-md-6"> 
+              <h3>CONTACT INFO</h3>
+                <p>Welcome to our Website. We are glad to have you around.</p>
+                <div class="line"></div>
+                <div class="row mt-4">
+                  <form #contactForm="ngForm" (ngSubmit)="contact(contactForm.value)">
+                    <div class="col-md-12 mt-3">
+                      <input type="tel" placeholder="Name" class="form-contact" name="name" required [(ngModel)]="details.name" #name="ngModel">
+                      <div class="error" *ngIf="name.errors && name.touched">
+                        <p class="error-forms" *ngIf="name.errors?.required">Name required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                      <input type="email" placeholder="Email" class="form-contact" email="true" name="email" required [(ngModel)]="details.email" #email="ngModel">
+                      <div class="error" *ngIf="email.errors && email.touched">
+                        <p class="error-forms" *ngIf="email.errors?.required">Email Field is required</p>
+                        <p class="error-forms" *ngIf="email.errors?.email">Email format doesnot matched..</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                      <input type="tel" placeholder="Phone" class="form-contact" name="mobile" required [(ngModel)]="details.mobile" #mobile="ngModel" maxlength="12">
+                      <div class="error" *ngIf="mobile.errors && mobile.touched">
+                        <p class="error-forms" *ngIf="mobile.errors?.required">Mobile Number is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                      <input type="text" placeholder="Subject" class="form-contact" name="subject" required [(ngModel)]="details.subject" #subject="ngModel">
+                      <div class="error" *ngIf="subject.errors && subject.touched">
+                        <p class="error-forms" *ngIf="subject.errors?.required">Subject Field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                      <textarea placeholder="Your Message" cols="40" rows="5" class="form-contact" required [(ngModel)]="details.message" #message="ngModel" name="message"
+                      ></textarea>
+                      <div class="error" *ngIf="message.errors && message.touched">
+                        <p class="error-forms" *ngIf="message.errors?.required">Message Field is required</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                      <input type="submit" class="wpcf7-submit" value="SEND" [disabled]="contactForm.invalid">
+                    </div>
+                  </form>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-md-12">
+            <h3>CONTACT INFO</h3>
+                <div class="line"></div>
+          </div>
+        </div>
+      </div>
+  <div class="container-fluid">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.250121441007!2d72.85575231437906!3d19.227928052177116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b18db166e301%3A0xc03d93988cdfec51!2sSengupta&#39;s%20Research%20Academy!5e0!3m2!1sen!2sin!4v1646050888857!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</section>

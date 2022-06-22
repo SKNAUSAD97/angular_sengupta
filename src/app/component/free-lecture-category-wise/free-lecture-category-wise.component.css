@@ -1,0 +1,117 @@
+.not-found{
+    text-align: center !important;
+    font-weight: 600 !important;
+    font-size: 20px !important;
+}
+.mailerlite-popup {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 50px 50px;
+    max-width: 700px;
+    background-color: #f1c40f;
+    text-align: center;
+}
+.mailerlite-popup .close-popup {
+    color: #fff !important;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    z-index: 999;
+  }
+  .mailerlite-popup h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Open Sans',Arial,Helvetica,sans-serif;
+  }
+  .modal-header{
+    border-bottom: none;
+  }
+  .mailerlite-popup .description {
+    font-family: 'Open Sans',Arial,Helvetica,sans-serif;
+    color: #0f0f0f;
+    font-size: 18px;
+  }
+  .border-radi6px{
+      border-radius: 6px!important;
+  }
+  .mailerlite-popup .input-group .form-control {
+    border-color: #666;
+    border-radius: 6px 0 0 6px;
+    border-style: solid;
+    border-width: 0;
+    z-index: 3;
+    background: #fff;
+color: #333;
+font-family: Roboto,Arial,Helvetica,sans-serif;
+font-size: 16px;
+line-height: 20px;
+padding: 15px 15px;
+position: relative;
+z-index: 2;
+float: left;
+width: 100%;
+margin-bottom: 0;
+height: auto;
+box-shadow: none;
+transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  }
+  .input-group-btn {
+    position: absolute;
+    font-size: 0;
+    right: -3px;
+  }
+  .input-group-btn2 {
+    position: relative;
+    left: 40%;
+  }
+  .mailerlite-popup .input-group-btn .btn {
+    border-color: #666;
+    border-radius: 0 6px 6px 0 !important;
+    border-style: solid;
+    border-width: 0;
+    z-index: 2;
+margin-left: -1px;
+background: #0f0f0f;
+border: none;
+color: #fff;
+font-family: 'Open Sans',Arial,Helvetica,sans-serif;
+font-size: 16px;
+font-weight: 700;
+line-height: 20px;
+padding: 15px 30px;
+text-transform: uppercase;
+  }
+  .mailerlite-popup .input-group-btn2 .btn {
+    border-color: #666;
+    border-radius: 6px !important;
+    border-style: solid;
+    border-width: 0;
+    z-index: 2;
+margin-left: -1px;
+background: #0f0f0f;
+border: none;
+color: #fff;
+font-family: 'Open Sans',Arial,Helvetica,sans-serif;
+font-size: 16px;
+font-weight: 700;
+line-height: 20px;
+padding: 15px 30px;
+text-transform: uppercase;
+  }
+@media only screen and (max-width: 768px) {
+    .mailerlite-popup {
+        padding: 15px !important;
+      }
+      .input-group-btn {
+        position: relative;
+        font-size: 0;
+      }
+  }

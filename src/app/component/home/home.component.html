@@ -1,0 +1,292 @@
+
+ <!-- Button trigger modal -->
+<button id="button-click" hidden type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+   Launch static backdrop modal
+ </button>
+ <!-- Modal -->
+
+ <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered modal-lg">
+     <div class="modal-content mailerlite-popup">
+       <div class="modal-header">
+         <button type="button" #mySecondDiv class="btn-close close-popup" data-bs-dismiss="modal" aria-label="Close"></button>
+       </div>
+       <div class="modal-body">
+         <div class="row mb-3 popup-content">
+            <div class="col-sm-12">
+               <h3> Explore our online fellowship </h3>
+            </div>
+         </div>
+         <div class="row mb-3 popup-content">
+            <div class="col-sm-12">
+              <div class="description">
+               <p style="font-size:14px">
+               <strong>Combine online lectures with hands-on training in our unique online<br> research fellowship. <a routerLink="fellowship"><u style="color: #000;">Click here to know more</u></a></strong>
+               </p>
+               <p>Subscribe to our newsletter to get updates on clinical research</p>
+              </div>
+            </div>
+         </div>
+         <div class="row mb-3 popup-content">
+            <form #fellowshipForm="ngForm" (ngSubmit)="fellowship(fellowshipForm.value)">
+               <div class="col-sm-12">
+                  <div class="input-group mb-0">
+                        <input class="form-control"required ngModel #email="ngModel" name="email" type="email" placeholder="Email">
+                        <span class="input-group-btn">
+                           <button class="btn btn-default primary" type="submit">Subscribe</button>
+                        </span>
+                  </div>
+               </div>
+            </form>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <!-- Second Modal -->
+
+<!-- Button trigger modal -->
+<button id="button-scnd-click" hidden type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+   Launch static backdrop modal
+ </button>
+ <!-- Modal -->
+
+ <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdrop2Label" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered modal-lg">
+     <div class="modal-content mailerlite-popup">
+       <div class="modal-header">
+         <button type="button" #myDiv class="btn-close first-pop close-popup" data-bs-dismiss="modal" aria-label="Close" (click)="openSecondModal()"></button>
+       </div>
+       <div class="modal-body">
+         <div class="row mb-3 popup-content">
+            <div class="col-sm-12">
+               <h3>Sign up for our Newsletter </h3>
+            </div>
+         </div>
+         <div class="row mb-3 popup-content">
+            <div class="col-sm-12">
+              <div class="description">
+               <p style="font-size:18px">
+               <strong>Join our newsletter to receive the latest updates, alerts on <br> research blogs and promotions.</strong>
+               </p>
+             
+              </div>
+            </div>
+         </div>
+         <div class="row mb-3 popup-content">
+            <form #subscriptionForm="ngForm" (ngSubmit)="subscription(subscriptionForm.value)">
+               <div class="col-sm-12">
+                  <div class="input-group mb-0">
+                        <input class="form-control mb-3 border-radi6px"required ngModel #name="ngModel" name="name" type="text" placeholder="Name">
+                        <input class="form-control mb-3 border-radi6px"required ngModel #email="ngModel" name="email" type="email" placeholder="Email">
+                        <span class="input-group-btn2">
+                           <button class="btn btn-default primary" type="submit">Subscribe</button>
+                        </span>
+                  </div>
+               </div>
+            </form>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+
+<!-- ======= Hero Section ======= -->
+<section style="padding: 0px;">
+   <div class="container-fluid" style="padding:0px">
+      <div class="row">
+
+         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            </div>
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <img src="assets/user/assets/img/hero-bg.jpg" class="d-block w-100">
+               </div> 
+               <div class="carousel-item">
+                  <img src="assets/user/assets/img/banner-2.jpg" class="d-block w-100">
+               </div>
+               <div class="carousel-item">
+                  <img src="assets/user/assets/img/hero-bg.jpg" class="d-block w-100">
+               </div>
+               <div class="carousel-item">
+                 <img src="assets/user/assets/img/100-banner.jpg" class="d-block w-100">
+              </div>
+              <div class="carousel-item">
+                 <img src="assets/user/assets/img/4500-banner.jpg" class="d-block w-100">
+              </div>
+               
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+            </button>
+         </div>
+      </div>
+   </div>
+ </section>
+  <!-- End Hero -->
+  <main id="main">
+  <!-- ======= About Section ======= -->
+  <section id="about" class="about section-bg">
+   <div class="container">
+      <div class="section-title" data-aos="fade-up">
+         <h2>What We offer</h2>
+      </div>
+      <div class="row">
+         <div class="col-md-6" data-aos="fade-up">
+            <div class="le-off">
+               <h5>E-LEARNING</h5>
+               Lectures, Fellowship, Learn Anytime, Anywhere
+            </div>
+            <div class="video-sec">
+               <iframe width="100%" height="250px" src="https://player.vimeo.com/video/535834897?h=0e0e48802a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div>
+               <button (click)="redirectToPage('course')" type="button" class="btn btn-primary active btn-sm center-brn">Know More</button>
+            </div>
+            <div>
+
+            </div> 
+            <div class="mb-4">
+              <img src="assets/user/assets/img/4500.jpeg"  class="w-100" alt="">
+            </div>
+         </div>
+         <div class="col-md-6" data-aos="fade-up">
+            <div class="le-off">
+               <h5>SERVICES</h5>
+               Get Assistance with Statistics and Manuscript Writing
+            </div>
+            <div class="video-sec">
+               <iframe width="100%" height="250px" src="https://player.vimeo.com/video/220681213?h=94ccc2c8db" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div>
+               <button (click)="redirectToPage('service')" type="button" class="btn btn-primary active btn-sm center-brn">Know More</button>
+            </div>
+            <div class="row justify-content-center">
+                 <img src="assets/user/assets/img/100-publication-service.png" alt="" class="w-100">
+            </div>
+         </div>
+      </div>
+   </div>
+ </section>
+  <!-- End About Section -->
+  <section class="publish-line">
+    <div class="container">
+       <div class="row" style="justify-content:center;">
+          <div class="col-md-6"  data-aos="fade-buttom">
+             <h4 class="text-center color-im">GIVE YOURSELVES THE BEST CHANCE
+                TO GET PUBLISHED
+             </h4>
+             <div>
+                <button type="button" class="btn btn-primary active btn-sm center-brn" (click)="redirectToPage('service')">GET STARTED</button>
+             </div>
+          </div>
+       </div>
+    </div>
+  </section>
+  <!-- ======= Testimonials Section ======= -->
+  <!-- ======= Testimonials Section ======= -->
+  <section id="testimonials" class="testimonials">
+   <div class="container position-relative" data-aos="fade-up">
+      <div class="row">
+         <div class="col-md-10">
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+               <!-- <div class="carousel-indicators" style=" bottom: -50px;">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  </div> -->
+               <div class="carousel-inner">
+                  <div class="carousel-item {{ testimonial.key == 0 ? 'active' : '' }}" *ngFor="let testimonial of testimonials.data |keyvalue">
+                     <div class="testimonial-item">
+                        <img src="{{ testimonial.value.image }}" class="testimonial-img" alt="">
+                        <h3>{{ testimonial.value.name }}</h3>
+                        <h4>{{ testimonial.value.designation }}</h4>
+                        <p>
+                           <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                           {{ testimonial.value.description }}
+                           <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+               <span class="visually-hidden">Previous</span>
+               </button>
+               <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+               <span class="carousel-control-next-icon" aria-hidden="true"></span>
+               <span class="visually-hidden">Next</span>
+               </button>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+ <!-- End Testimonials Section -->
+  <!-- ======= Portfolio Section ======= -->
+  <!-- ======= Team Section ======= -->
+  <section id="team" class="team team-home section-bg">
+    <div class="container">
+       <div class="section-title">
+          <h2 data-aos="fade-up">BLOGS</h2>
+       </div>
+       <div class="row">
+         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" *ngFor="let blog of blogs.data">
+             <div class="member">
+                <div class="member-img">
+                   <img src="{{ blog.blog_image }}" class="img-fluid img-blog" alt="">
+                </div>
+                <div class="member-info">
+                   <h4>{{ blog.blog_name }}</h4>
+                   <span [innerHtml]='blog.description | slice:0:200'></span>
+                </div>
+                <div class="btn-wrap">
+                   <a (click)="redirectToSinglePage(blog.id, blog.blog_name)" style="cursor: pointer;" class="btn-buy">Read More</a>
+                </div>
+             </div>
+          </div>
+       </div>
+       <div class="row justify-content-center">
+          <div class="col-md-2 text-center">
+            <button class="btn btn-primary" routerLink="blogs">View All</button>
+          </div>
+       </div>
+    </div>
+  </section>
+  <section class="pb-0">
+   <div class="container">
+      <div class="section-title pb-0" data-aos="fade-up">
+         <h2>Our Journey</h2>
+      </div>
+    <div class="row justify-content-center">
+       <div class="col-md-8">
+         <iframe src="https://player.vimeo.com/video/711067465?h=ef5e49cc0c" width="100%" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+       </div>
+    </div>
+   </div>
+</section>
+  <section>
+   <div class="container-fluid">
+      <div class="section-title" data-aos="fade-up">
+         <h2>Our Partners</h2>
+      </div>
+      <carousel cellsToShow="7" height="100">
+         <div class="carousel-cell" *ngFor="let client of clients">
+             <img src="{{ client }}">
+         </div>
+     </carousel>
+   </div>
+  </section>
+  <!-- End Team Section -->

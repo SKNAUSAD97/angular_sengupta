@@ -1,0 +1,88 @@
+<!-- Button trigger modal -->
+<button id="button-scnd-click" hidden type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+    Launch static backdrop modal
+  </button>
+  <!-- Modal -->
+  
+  <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdrop2Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content mailerlite-popup">
+        <div class="modal-header">
+          <button type="button" #myDiv class="btn-close first-pop close-popup" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row mb-3 popup-content">
+             <div class="col-sm-12">
+                <h3>Sign up for our Newsletter </h3>
+             </div>
+          </div>
+          <div class="row mb-3 popup-content">
+             <div class="col-sm-12">
+               <div class="description">
+                <p style="font-size:18px">
+                <strong>Join our newsletter to receive the latest updates, alerts on <br> research blogs and promotions.</strong>
+                </p>
+              
+               </div>
+             </div>
+          </div>
+          <div class="row mb-3 popup-content">
+             <form #subscriptionForm="ngForm" (ngSubmit)="subscription(subscriptionForm.value)">
+                <div class="col-sm-12">
+                   <div class="input-group mb-0">
+                         <input class="form-control mb-3 border-radi6px"required ngModel #name="ngModel" name="name" type="text" placeholder="Name">
+                         <input class="form-control mb-3 border-radi6px"required ngModel #email="ngModel" name="email" type="email" placeholder="Email">
+                         <span class="input-group-btn2">
+                            <button class="btn btn-default primary" type="submit">Subscribe</button>
+                         </span>
+                   </div>
+                </div>
+             </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<section class="top_site_main " style="min-height: 180px; color: #ffffff;background-image:url(https://senguptasresearchacademy.com/wp-content/uploads/2017/05/literature.png);">
+    <div class="container">
+       <div class="row">
+          <h1 class="tes-sec">FREE LECTURES</h1>
+       </div>
+    </div>
+ </section>
+ <section>
+    <div class="container">
+        <div class="row" *ngIf="status == true"> 
+            <p class="not-found">No Lectures Found</p>
+        </div>
+        <div class="row">
+            <div col-md-12>
+                <div *ngFor="let lecture of freeLectures">
+                    <h4 class="text-center"><a href="#">{{ lecture.title }}</a></h4>
+                    <p class="text-center" [innerHtml]="lecture.description"></p>
+                    <div class="row justify-content-center">
+                      <div class="col-md-8">
+                        <iframe width="100%" height="300" [src]="lecture.video" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+                      </div>
+                     </div>
+                </div>
+                <p class="text-center mt-4"><b>Sign you for our newsletter to stay up to date with our videos, blogs. vlogs, podcasts and products.</b></p>
+            </div>
+        </div>
+        <div class="row">
+         <div class="col-md-12 newsletter-pouop-link-box">
+           <div class="row newsletter-pouop-lnner">
+             <div class="col-md-9"> 
+               <h2>Sign up for our Newsletter </h2>
+               <p>Join our newsletter to receive the latest updates, alerts<br> on
+                 research blogs and promotions.</p>
+             </div>
+             <div class="col-md-3">
+               <p (click)="newsLetter()" class="newsletter-pouop-btn" style="cursor: pointer;">News Letter</p>
+             </div>
+           </div>
+         </div>
+       </div>
+    </div>
+ </section>

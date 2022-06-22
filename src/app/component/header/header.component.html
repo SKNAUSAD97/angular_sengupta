@@ -1,0 +1,53 @@
+<!-- ======= Top Bar ======= -->
+<section id="topbar" class="d-flex align-items-center">
+   <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+         <i>HAVE A QUESTION</i>
+         <i class="bi bi-telephone-fill d-flex align-items-center ms-4"><span>9943909766</span></i>
+         <i class="bi bi-envelope-fill d-flex align-items-center ms-4"><a href="mailto:info@senguptasresearchacademy.com">info@senguptasresearchacademy.com</a></i>
+      </div>
+      <div class="cta d-none d-md-flex align-items-center">
+         <!-- <a href="#about" class="scrollto"><i class="bi bi-search search-icon"></i></a> -->
+         <a routerLink="login" class="scrollto" *ngIf="!loggedIn">Login</a>
+         <a routerLink="dashboard" class="scrollto" *ngIf="loggedIn">Dashboard</a>
+      </div>
+   </div>
+ </section>
+ <!-- ======= Header ======= -->
+ <header id="header" class="d-flex align-items-center">
+   <div class="container d-flex align-items-center justify-content-between">
+      <div class="logo">
+         <a routerLink="/"><img src="assets/user/assets/img/logo.png" alt="" class="img-fluid"></a>
+      </div>
+      <nav id="navbar" class="navbar {{ navbar_mobile != false ? 'navbar-mobile' : '' }}">
+         <ul>
+            <li routerLink="home" routerLinkActive="active"><a class="nav-link scrollto active" (click)="closeMenu()">Home</a></li>
+            <li class="dropdown" (click)="openSubMenuItem('about')">
+               <a><span style="cursor: pointer;" routerLink="about">about us</span> <i class="bi bi-chevron-down"></i></a>
+               <ul class="{{ about == true ? 'dropdown-active' : '' }}">
+                  <li routerLink="about"><a (click)="closeMenu()">About</a></li>
+                  <li routerLink="testimonial"><a (click)="closeMenu()">Testimonial</a></li>
+                  <li routerLink="publication"><a (click)="closeMenu()">Publication</a></li>
+               </ul>
+            </li> 
+            <li routerLink="fellowship" routerLinkActive="active"><a class="nav-link scrollto" (click)="closeMenu()"> FELLOWSHIP</a></li>
+            <li routerLink="course" routerLinkActive="active">
+               <a (click)="closeMenu()" class="nav-link scrollto"><span>E–LEARNING</span></a>
+            </li>
+            <li class="dropdown" (click)="openSubMenuItem('free-lectures')">
+               <a><span style="cursor: pointer;" routerLink="free-lectures">FREE LECTURES</span> <i class="bi bi-chevron-down"></i></a>
+               <ul class="{{ free_lectures == true ? 'dropdown-active' : '' }}">
+                  <li *ngFor="let categories of lectureCategories" (click)="redirectToLecturePage(categories.id)"><a style="cursor: pointer;" (click)="closeMenu()">{{ categories.category_name }}</a></li>
+               </ul>
+            </li>
+            <li routerLink="service" routerLinkActive="active"><a (click)="closeMenu()" class="nav-link scrollto" >services</a></li>
+            <li routerLink="blogs" routerLinkActive="active"><a (click)="closeMenu()">Blog</a></li>
+            <!-- <li><a routerLink="workshop" routerLinkActive="active">Workshop</a></li> -->
+            <li routerLink="contact-us" routerLinkActive="active"><a class="nav-link scrollto" (click)="closeMenu()">Contact</a></li>
+         </ul>
+         <i class="bi {{ bi_list == true ? 'bi-list' : '' }} {{ bi_x == true ? 'bi-x' : '' }}  mobile-nav-toggle" (click)="toggleMenu()"></i>
+      </nav>
+      <!-- .navbar -->
+   </div>
+ </header>
+ <!-- End Header -->

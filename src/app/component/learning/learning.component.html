@@ -1,0 +1,77 @@
+<section class="top_site_main " style="min-height: 180px; color: #ffffff;background-image:url(https://senguptasresearchacademy.com/wp-content/uploads/2017/05/literature.png);">
+    <div class="container">
+       <div class="row">
+          <h1 class="tes-sec">E- LEARNING</h1>
+       </div>
+    </div>
+ </section>
+ <section style="background-color: #f5f5f5; padding: 50px 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4" *ngFor="let course of courses|keyvalue">
+                <div class="courses-item">
+                    <div class="img-part">
+                        <img src="{{ course.value.course_image }}">
+                    </div>
+                    <div class="content-part">
+                        <h3>{{ course.value.course_name }}</h3>
+                        <p>{{ course.value.course_description | slice:0:100 }}</p>
+                        <h5 class="bottom-part" style="cursor: pointer;" (click)="courseSingle(course.value.id)"><i class="bi bi-book"></i> &nbsp; View Details</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center" *ngIf="!is_course_taken">
+            <div class="col-md-6">
+                <div class="buy-course">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="sales-tile3-icon">
+                                <i class="bi bi-shop"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <p class="price">₹ {{ this.price.price }}/-</p>
+                            <button class="button-all-course" (click)="buyCourse()"><i class="bi bi-person-square"></i>&nbsp; Buy this Course</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 review-user">
+                            <!-- <span class="bi bi-star{{ review >= 1 ? '-fill' : '' }}"></span>
+                            <span class="bi bi-star{{ review >= 2 ? '-fill' : '' }}"></span>
+                            <span class="bi bi-star{{ review >= 3 ? '-fill' : '' }}"></span>
+                            <span class="bi bi-star{{ review >= 4 ? '-fill' : '' }}"></span>
+                            <span class="bi bi-star{{ review >= 5 ? '-fill' : '' }}"></span> -->
+
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 mt-4">
+                <img src="assets/user/assets/img/4500.jpeg"  class="w-100" alt="">
+            </div>
+            <div class="col-md-12" *ngIf="reviews.length !=0">
+                <div style="text-align: right;">
+                    <button class="btn btn-primary" (click)="changeReviewView()">{{ view == false ? 'View All' : 'View Less' }}</button>
+                </div>
+                <div class="review-all">
+                    <div class="review-all-bx" *ngFor="let data of reviews; let i=index">
+                        <div class="d-flex">
+                            <div><h3>{{ data.user_name }}</h3></div>
+                            <div>
+                                <span class="bi bi-star-fill" *ngFor="let n of data.array_of_reviews"></span>
+                            </div>
+                        </div>
+                        <p>{{ data.comment }}</p>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+ </section>
+ 

@@ -1,0 +1,32 @@
+<section class="top_site_main " style="min-height: 180px; color: #ffffff;background-image:url(https://senguptasresearchacademy.com/wp-content/uploads/2017/05/literature.png);">
+    <div class="container">
+       <div class="row">
+          <h1 class="tes-sec">TESTIMONIALS</h1>
+       </div>
+    </div>
+ </section>
+ <!-- ======= Portfolio Section ======= -->
+ <section>
+    <div class="container">
+      <div *ngFor="let testimonial of testimonials.data">
+         <div class="row box-testimonial" data-aos="fade-up" data-aos-delay="100" *ngIf="testimonial.oddEven == 0">
+            <div class="col-md-3">
+               <img src="{{ testimonial.image }}" class="img-testimonial" >
+            </div>
+            <div class="col-md-9">
+               <h5>{{ testimonial.name }}</h5>
+               <p>“{{ testimonial.description }}</p>
+            </div>
+         </div>
+         <div class="row box-testimonial" data-aos="fade-up" data-aos-delay="100" *ngIf="testimonial.oddEven == 1">
+            <div class="col-md-9">
+               <h5>{{ testimonial.name }}</h5>
+               <p>“{{ testimonial.description }}</p>
+            </div>
+            <div class="col-md-3">
+               <img src="{{ testimonial.image }}" class="img-testimonial">
+            </div>
+         </div>
+      </div> 
+    </div>
+ </section>
