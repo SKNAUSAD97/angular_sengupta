@@ -38,22 +38,25 @@
         <div class="row" style="margin-top: 40px;">
           <div class="col-md-12">
           <ul class="nav nav-tabs tab-overview" id="myTab" role="tablist">
+            
             <li class="nav-item" role="presentation">
-              <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
-                <i class="bi bi-bookmark-check check-icom-overview"></i>
-                <span>
-                  Overview
-                </span>
-              </a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+              <a class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
                 <i class="bi bi-book check-icom-overview"></i>
                 <span>
                   Curriculum
                 </span>
               </a>
             </li>
+
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+                <i class="bi bi-bookmark-check check-icom-overview"></i>
+                <span>
+                  Overview
+                </span>
+              </a>
+            </li>
+
             <li class="nav-item" role="presentation">
               <a (click)="isLoggedIn()" class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">
                 <i class="bi bi-bookmark-plus check-icom-overview"></i>
@@ -62,6 +65,7 @@
                 </span>
               </a>
             </li>
+
             <li class="nav-item" role="presentation">
               <a (click)="isLoggedIn()" class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button" role="tab" aria-controls="quiz" aria-selected="false"><i class="bi bi-question-circle check-icom-overview"></i>
                 <span> 
@@ -69,64 +73,11 @@
                 </span>
               </a>
             </li>
+
           </ul>
           <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-            <div class="row">
-              <div class="col-md-9">
-                <div class="thim-course-content">
-                  <h5>OVERVIEW</h5>
-                  <p>
-                    {{ course.course_description }}
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-3" style="padding-left: 30px;">
-                <h5>Course Features</h5>
-                <ul class="thim-course-info">
-                  <li><i class="bi bi-file-earmark-pdf check-icom-overview"></i>
-                    <span class="label">Lectures</span>
-                    <span class="value">{{ course.features.no_of_lectures }}</span>
-                  </li>
-                  <li><i class="bi bi-puzzle check-icom-overview"></i>
-                    <span class="label"> Quizzes</span><span class="value">
-                      {{ course.features.no_of_quizzes }}
-                    </span>
-                    </li>
-                  <li><i class="bi bi-clock check-icom-overview"></i>
-                    <span class="label"> 
-                       Duration
-                    </span>
-                    <span class="value">
-                      {{ course.features.duration }}
-                    </span>
-                  </li>
-                  <li><i class="bi bi-arrow-bar-up check-icom-overview"></i>
-                    <span class="label"> Skill level</span><span class="value">
-                      {{ course.features.skill_level }}
-                    </span>
-                  </li>
-                  <li><i class="bi bi-language check-icom-overview"></i>
-                    <span class="label"> Language</span>
-                    <span class="value">English</span></li>
-                  <li><i class="bi bi-file-earmark-person check-icom-overview"></i>
-                    <span class="label"> Students</span><span class="value">
-                      {{ course.features.students }}
-                    </span>
-                  </li>
-                  <li><i class="bi bi-check-square check-icom-overview"></i>
-                    <span class="label"> 
-                      Assessments
-                    </span>
-                    <span class="value">
-                      {{ course.features.assessments }}
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            </div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            
+            <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
               <div class="row">
                 <div class="col-md-12">
                   <ul class="thim-course-info">
@@ -144,6 +95,63 @@
                 </div>
               </div>
             </div>
+
+            <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <div class="row">
+                <div class="col-md-9">
+                  <div class="thim-course-content">
+                    <h5>OVERVIEW</h5>
+                    <p>
+                      {{ course.course_description }}
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-3" style="padding-left: 30px;">
+                  <h5>Course Features</h5>
+                  <ul class="thim-course-info">
+                    <li><i class="bi bi-file-earmark-pdf check-icom-overview"></i>
+                      <span class="label">Lectures</span>
+                      <span class="value">{{ course.features.no_of_lectures }}</span>
+                    </li>
+                    <li><i class="bi bi-puzzle check-icom-overview"></i>
+                      <span class="label"> Quizzes</span><span class="value">
+                        {{ course.features.no_of_quizzes }}
+                      </span>
+                      </li>
+                    <li><i class="bi bi-clock check-icom-overview"></i>
+                      <span class="label"> 
+                        Duration
+                      </span>
+                      <span class="value">
+                        {{ course.features.duration }}
+                      </span>
+                    </li>
+                    <li><i class="bi bi-arrow-bar-up check-icom-overview"></i>
+                      <span class="label"> Skill level</span><span class="value">
+                        {{ course.features.skill_level }}
+                      </span>
+                    </li>
+                    <li><i class="bi bi-language check-icom-overview"></i>
+                      <span class="label"> Language</span>
+                      <span class="value">English</span></li>
+                    <li><i class="bi bi-file-earmark-person check-icom-overview"></i>
+                      <span class="label"> Students</span><span class="value">
+                        {{ course.features.students }}
+                      </span>
+                    </li>
+                    <li><i class="bi bi-check-square check-icom-overview"></i>
+                      <span class="label"> 
+                        Assessments
+                      </span>
+                      <span class="value">
+                        {{ course.features.assessments }}
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
             <div class="tab-pane fade" id="{{ is_course_taken ? 'contact' : ''  }}" role="tabpanel" aria-labelledby="contact-tab">
               <div class="row">
                 <div class="col-md-6" *ngFor="let topic of course.get_topics">

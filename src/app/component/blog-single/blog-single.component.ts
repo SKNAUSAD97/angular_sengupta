@@ -16,6 +16,7 @@ export class BlogSingleComponent implements OnInit {
   public response:any;
   public blog:any;
   public id:any;
+  public loading:any = true;
 
   constructor(private UserService:UserService, private ActivatedRoute:ActivatedRoute) { }
 
@@ -24,7 +25,7 @@ export class BlogSingleComponent implements OnInit {
     this.UserService.getSingleBlog(this.id).subscribe((success)=>{
       this.response = success;
       this.blog = this.response.data;
-      console.log(this.blog);
+      this.loading = false;
     });
   }
 

@@ -51,27 +51,34 @@
       </div>
     </div>
   </section>
+
   <section>
-      <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <img src="{{ blog.blog_image }}" class="w-100 mb-3" alt="">
-                <p [innerHtml]="blog.description"></p>
-            </div>
+    <div class="container">
+      <div class="row justify-content-center" *ngIf="loading">
+          <div class="col-md-3">
+            <img src="assets/user/assets/img/loader/spinner3.gif" />
+          </div>
+      </div>
+
+      <div class="row" *ngIf="!loading">
+        <div class="col-md-12">
+            <img src="{{ blog.blog_image }}" class="w-100 mb-3" alt="">
+            <p [innerHtml]="blog.description"></p>
         </div>
-        <div class="row">
-          <div class="col-md-12 newsletter-pouop-link-box">
-            <div class="row newsletter-pouop-lnner">
-              <div class="col-md-9"> 
-                <h2>Sign up for our Newsletter </h2>
-                <p>Join our newsletter to receive the latest updates, alerts<br> on
-                  research blogs and promotions.</p>
-              </div>
-              <div class="col-md-3">
-                <p (click)="newsLetter()" class="newsletter-pouop-btn" style="cursor: pointer;">News Letter</p>
-              </div>
+      </div>
+      <div class="row" *ngIf="!loading">
+        <div class="col-md-12 newsletter-pouop-link-box">
+          <div class="row newsletter-pouop-lnner">
+            <div class="col-md-9"> 
+              <h2>Sign up for our Newsletter </h2>
+              <p>Join our newsletter to receive the latest updates, alerts<br> on
+                research blogs and promotions.</p>
+            </div>
+            <div class="col-md-3">
+              <p (click)="newsLetter()" class="newsletter-pouop-btn" style="cursor: pointer;">News Letter</p>
             </div>
           </div>
         </div>
       </div>
-  </section>
+  </div>
+</section>

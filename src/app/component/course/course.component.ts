@@ -43,7 +43,8 @@ export class CourseComponent implements OnInit {
   playVideo = (topic_id:any, key:any) =>{
     // If the course is not taken then condition will be applied otherwise no conditions wil be applied
     if(this.is_course_taken == false){
-      if(key == 0 && this.is_first_module){
+      // if(key == 0 && this.is_first_module){
+      if(this.is_first_module){
         this.Router.navigate([`play-video/${topic_id}`]);
       }else{
         Swal.fire({

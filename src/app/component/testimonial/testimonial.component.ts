@@ -11,12 +11,15 @@ export class TestimonialComponent implements OnInit {
 
   testimonials:any;
   groupList:any = [];
+  public loading:any = true;
+
   constructor(private UserService:UserService) { }
 
   ngOnInit(): void {
 
     this.UserService.getTestimonials().subscribe((success)=>{
       this.testimonials = success;
+      this.loading = false;
     });
   }
 

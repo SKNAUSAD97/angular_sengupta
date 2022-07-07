@@ -20,6 +20,7 @@ export class LearningComponent implements OnInit {
   reviews:any = [];
   all_reviews:any;
   view:boolean = false;
+  public loading:any = true;
 
   constructor(private UserService:UserService, private Router:Router) { }
 
@@ -35,7 +36,7 @@ export class LearningComponent implements OnInit {
       this.price = this.response.data;
       this.review = this.response.review;
       this.all_reviews = this.response.reviews;
-
+      this.loading = false;
       this.all_reviews.map((element:any, index:any) => {
           if(index < 2){
             this.reviews.push(element);

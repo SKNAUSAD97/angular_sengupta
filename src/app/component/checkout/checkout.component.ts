@@ -54,7 +54,7 @@ export class CheckoutComponent implements OnInit {
               icon: 'success',
               text: 'You have successfully bought this course..'
             })
-            this.Router.navigate(['dashboard']);
+            this.Router.navigate(['course']);
           }else{
             window.location.href = `${environment.web_url}payu-money-payment?coupon_id=itwkaaclthjukqqigigldeejzvrhkqwavdqwxwnqdfgbaxrbufomzyduqlehopvgsmmikpmsdiphejaikkuzvikfzwdyseaduznjsuzayiiqvtpzgeofuxbmtxuqgsnvgmkmrfjeaudtuojpgracesnsmgjylbwk&data=${this.response.price}`;
             // window.location.href = `http://localhost:8000/payu-money-payment?coupon_id=itwkaaclthjukqqigigldeejzvrhkqwavdqwxwnqdfgbaxrbufomzyduqlehopvgsmmikpmsdiphejaikkuzvikfzwdyseaduznjsuzayiiqvtpzgeofuxbmtxuqgsnvgmkmrfjeaudtuojpgracesnsmgjylbwk&data=${this.response.price}`;

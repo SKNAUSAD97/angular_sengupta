@@ -9,11 +9,15 @@ import { Router } from "@angular/router";
 })
 export class BlogsComponent implements OnInit {
   public blogs:any;
+  public loading:any = true;
+  public response:any;
   constructor(private UserService:UserService, private Router:Router) { }
 
   ngOnInit(): void {
     this.UserService.getBlogs().subscribe((success)=>{
-      this.blogs = success;
+      this.response = success;
+      this.blogs = this.response;
+      this.loading = false;
     });
   }
 

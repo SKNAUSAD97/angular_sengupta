@@ -11,12 +11,19 @@
        <!-- <div class="section-title">
           <h2 data-aos="fade-up">BLOGS</h2>
        </div> -->
-       <div class="row">
+       <div class="row justify-content-center" *ngIf="loading">
+          
+         <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+             <img src="assets/user/assets/img/loader/spinner2.gif" />
+          </div>
+          
+       </div>
+       <div class="row" *ngIf="!loading">
           
          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" *ngFor="let blog of blogs.data">
              <div class="member">
                 <div class="member-img">
-                   <img src="{{ blog.blog_image }}" class="img-fluid img-blog" alt="" style="cursor: pointer;" (click)="redirectToFellowship()">
+                   <img src="{{ blog.blog_image }}" class="img-fluid img-blog" alt="" style="cursor: pointer;" (click)="redirectToSinglePage(blog.id, blog.blog_name)">
                 </div>
                 <div class="member-info">
                    <h4>{{ blog.blog_name }}</h4>

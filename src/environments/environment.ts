@@ -6,4 +6,3 @@ export const environment = {
   // web_url : 'http://localhost:8000/',
   // api: 'http://localhost:8000/api',
 };
-

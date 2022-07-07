@@ -49,23 +49,26 @@ export class VideoComponent implements OnInit {
         this.description = data.description;
       }
     });
-    if(key != 0){
-      if(this.is_course_taken){
-        this.topic.video = video_url;
-        this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(this.topic.video);
-      }else{
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'You have not purchased this course !'
-        })
-      }
-    }else{
-      if(this.is_course_taken){
-        this.topic.video = video_url;
-        this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(this.topic.video);
-      }
-    }
+    // if(key != 0){
+    //   if(this.is_course_taken){
+    //     this.topic.video = video_url;
+    //     this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(this.topic.video);
+    //   }else{
+    //     Swal.fire({
+    //       icon: 'error',
+    //       title: 'Oops...',
+    //       text: 'You have not purchased this course !'
+    //     })
+    //   }
+    // }else{
+    //   if(this.is_course_taken){
+    //     this.topic.video = video_url;
+    //     this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(this.topic.video);
+    //   }
+    // }
+
+    this.topic.video = video_url;
+    this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(this.topic.video);
   }
 
 }

@@ -18,12 +18,15 @@ export class FreeLectureCategoryWiseComponent implements OnInit {
   public freeLectures:any;
   public status:any = false;
   public safeURL:any;
+  public loading:any = true;
+
   constructor(private UserService:UserService, private ActivatedRoute:ActivatedRoute, private Router:Router, private _sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.id = this.ActivatedRoute.snapshot.paramMap.get('id');
     this.UserService.getFreeLecturesCategoryWise(this.id).subscribe((success)=>{
       this.response = success;
+      this.loading = false;
       if(this.response.code == 200){
         this.freeLectures = this.response.data;
         this.status = false;

@@ -56,7 +56,12 @@
         <div class="row" *ngIf="status == true"> 
             <p class="not-found">No Lectures Found</p>
         </div>
-        <div class="row">
+        <div class="row justify-content-center" *ngIf="loading"> 
+          <div class="col-md-3">
+            <img src="assets/user/assets/img/loader/spinner3.gif" />
+          </div>
+        </div>
+        <div class="row" *ngIf="!loading">
             <div col-md-12>
                 <div *ngFor="let lecture of freeLectures">
                     <h4 class="text-center"><a href="#">{{ lecture.title }}</a></h4>
@@ -70,7 +75,7 @@
                 <p class="text-center mt-4"><b>Sign you for our newsletter to stay up to date with our videos, blogs. vlogs, podcasts and products.</b></p>
             </div>
         </div>
-        <div class="row">
+        <div class="row" *ngIf="!loading">
          <div class="col-md-12 newsletter-pouop-link-box">
            <div class="row newsletter-pouop-lnner">
              <div class="col-md-9"> 

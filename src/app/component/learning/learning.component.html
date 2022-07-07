@@ -7,7 +7,12 @@
  </section>
  <section style="background-color: #f5f5f5; padding: 50px 0;">
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center" *ngIf="loading">
+            <div class="col-md-3">
+                <img src="assets/user/assets/img/loader/spinner2.gif" />
+            </div>
+        </div>
+        <div class="row" *ngIf="!loading">
             <div class="col-md-4" *ngFor="let course of courses|keyvalue">
                 <div class="courses-item">
                     <div class="img-part">
@@ -21,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center" *ngIf="!is_course_taken">
+        <div class="row justify-content-center" *ngIf="!is_course_taken && !loading">
             <div class="col-md-6">
                 <div class="buy-course">
                     <div class="row">

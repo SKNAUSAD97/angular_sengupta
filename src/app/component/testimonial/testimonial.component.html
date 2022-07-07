@@ -8,25 +8,34 @@
  <!-- ======= Portfolio Section ======= -->
  <section>
     <div class="container">
-      <div *ngFor="let testimonial of testimonials.data">
-         <div class="row box-testimonial" data-aos="fade-up" data-aos-delay="100" *ngIf="testimonial.oddEven == 0">
+      <div class="row justify-content-center" *ngIf="loading">
             <div class="col-md-3">
-               <img src="{{ testimonial.image }}" class="img-testimonial" >
+               <img src="assets/user/assets/img/loader/spinner3.gif" />
             </div>
-            <div class="col-md-9">
-               <h5>{{ testimonial.name }}</h5>
-               <p>“{{ testimonial.description }}</p>
-            </div>
+      </div>
+      <div class="row" *ngIf="!loading">
+         <div class="col-md-12">
+            <div *ngFor="let testimonial of testimonials.data">
+               <div class="row box-testimonial" data-aos="fade-up" data-aos-delay="100" *ngIf="testimonial.oddEven == 0">
+                  <div class="col-md-3">
+                     <img src="{{ testimonial.image }}" class="img-testimonial" >
+                  </div>
+                  <div class="col-md-9">
+                     <h5>{{ testimonial.name }}</h5>
+                     <p>“{{ testimonial.description }}</p>
+                  </div>
+               </div>
+               <div class="row box-testimonial" data-aos="fade-up" data-aos-delay="100" *ngIf="testimonial.oddEven == 1">
+                  <div class="col-md-9">
+                     <h5>{{ testimonial.name }}</h5>
+                     <p>“{{ testimonial.description }}</p>
+                  </div>
+                  <div class="col-md-3">
+                     <img src="{{ testimonial.image }}" class="img-testimonial">
+                  </div>
+               </div>
+            </div> 
          </div>
-         <div class="row box-testimonial" data-aos="fade-up" data-aos-delay="100" *ngIf="testimonial.oddEven == 1">
-            <div class="col-md-9">
-               <h5>{{ testimonial.name }}</h5>
-               <p>“{{ testimonial.description }}</p>
-            </div>
-            <div class="col-md-3">
-               <img src="{{ testimonial.image }}" class="img-testimonial">
-            </div>
-         </div>
-      </div> 
+      </div>
     </div>
  </section>

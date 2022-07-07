@@ -63,10 +63,10 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let booking of bookings">
-                        <th scope="row">{{ booking.order_id }}</th>
-                        <td>{{ booking.price }}</td>
-                        <td>{{ booking.booking_date }}</td>
+                      <tr>
+                        <th scope="row">{{ bookings.order_id }}</th>
+                        <td>{{ bookings.price }}</td>
+                        <td>{{ bookings.booking_date }}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -131,10 +131,10 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let booking of bookings">
-                    <th scope="row">{{ booking.order_id }}</th>
-                    <td>{{ booking.price }}</td>
-                    <td>{{ booking.booking_date }}</td>
+                  <tr>
+                    <th scope="row">{{ bookings.order_id }}</th>
+                    <td>{{ bookings.price }}</td>
+                    <td>{{ bookings.booking_date }}</td>
                   </tr>
                 </tbody>
               </table>
