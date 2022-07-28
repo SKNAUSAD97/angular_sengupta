@@ -120,4 +120,8 @@ export class UserService {
   contactSubmit = (argument:any) =>{
     return this.HttpClient.post(`${this.api}/get-contact`, argument);
   }
+
+  getUrl = (argument:any) =>{
+    return this.HttpClient.post(`${this.api}/get-url`, argument);
+  }
 }

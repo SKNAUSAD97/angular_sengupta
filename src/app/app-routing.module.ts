@@ -51,7 +51,7 @@ const routes: Routes = [
   },
   {
     path:'dummyroute',
-    component: CourseComponent
+    component: CourseComponent,
   },
   {
     path:'course/:id/:user_id',
@@ -100,39 +100,39 @@ const routes: Routes = [
   {
     path:'dashboard',
     component:DashboardComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
     path:'service',
-    component:ServicesComponent
+    component:ServicesComponent,
   },
   {
     path:'fellowship',
-    component:FellowshipComponent
+    component:FellowshipComponent,
   },
   {
     path:'blog/:id/:name',
-    component:BlogSingleComponent
+    component:BlogSingleComponent,
   },
   {
     path:'contact-us',
-    component:ContactUsComponent
+    component:ContactUsComponent,
   },
   {
     path:'blogs',
-    component:BlogsComponent
+    component:BlogsComponent,
   },
   {
     path:'term-condition',
-    component:TermComponent
+    component:TermComponent,
   },
   {
     path:'workshop',
-    component:WorkshopComponent
+    component:WorkshopComponent,
   },
   {
     path:'privacy-policy',
-    component:PrivacyPolicyComponent
+    component:PrivacyPolicyComponent,
   },
   {
     path:'ppt-viewer',
@@ -141,7 +141,7 @@ const routes: Routes = [
   {
     path:'checkout',
     component:CheckoutComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   }
   
 ];

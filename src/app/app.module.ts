@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Meta, Title } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './component/header/header.component';
@@ -106,6 +106,7 @@ import { MainComponent } from './component/main/main.component';
   ],
   providers: [
     // {provide : LocationStrategy , useClass: HashLocationStrategy},
+    Title,Meta,
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
