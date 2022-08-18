@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         if(this.response.code == 200){
           localStorage.setItem('user', JSON.stringify(this.response.data));
           Swal.fire('Login Successfull!');
-          this.Router.navigate(['course'])
+          this.Router.navigate(['e-learning-course'])
           .then(() => {
             window.location.reload();
           });
@@ -71,7 +71,7 @@ export class LoginComponent implements OnInit {
           if(this.response.code == 200){
             localStorage.setItem('user', JSON.stringify(this.response.data));
             Swal.fire('Login Successfull!');
-            this.Router.navigate(['course'])
+            this.Router.navigate(['e-learning-course'])
             .then(() => {
               window.location.reload();
             });
@@ -98,7 +98,7 @@ export class LoginComponent implements OnInit {
           if(this.response.code == 200){
             localStorage.setItem('user', JSON.stringify(this.response.data));
             Swal.fire('Login Successfull!');
-            this.Router.navigate(['course'])
+            this.Router.navigate(['e-learning-course'])
             .then(() => {
               window.location.reload();
             });

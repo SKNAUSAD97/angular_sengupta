@@ -58,7 +58,7 @@ const routes: Routes = [
     component:CourseComponent,
   },
   {
-    path:'course',
+    path:'e-learning-course',
     component:LearningComponent,
   },
   {

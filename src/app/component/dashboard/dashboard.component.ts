@@ -42,7 +42,7 @@ export class DashboardComponent implements OnInit {
         this.bookings = success.booking;
         this.isAvailableReview = success.isAvailableReview;
         this.review = success.review;
-        console.log(this.isAvailableReview);
+        console.log(this.bookings);
         if(this.isAvailableReview == 'yes'){
           this.reviewCount = success.review.review_count;
           this.reviewForm.patchValue({
